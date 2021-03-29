@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Alamofire
+import AlamofireImage
 
 
 
@@ -58,7 +59,12 @@ class ViewController: UIViewController, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilmeCell") as? FilmeCell else {return UITableViewCell()}
     
-        cell.tituloLabel.text = results[indexPath.row].title
+        // Verificação pra mostrar na table view filmes e séries
+        if results[indexPath.row].title == nil{
+            cell.tituloLabel.text = results[indexPath.row].name
+        }else{
+            cell.tituloLabel.text = results[indexPath.row].title
+        }
         
         return cell
         
