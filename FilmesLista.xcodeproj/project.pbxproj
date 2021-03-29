@@ -13,7 +13,8 @@
 		1C21A903260E7AFD00CB3EB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C21A901260E7AFD00CB3EB9 /* Main.storyboard */; };
 		1C21A905260E7AFE00CB3EB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C21A904260E7AFE00CB3EB9 /* Assets.xcassets */; };
 		1C21A908260E7AFE00CB3EB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C21A906260E7AFE00CB3EB9 /* LaunchScreen.storyboard */; };
-		1C21A91A260F6B8200CB3EB9 /* FilmeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21A919260F6B8200CB3EB9 /* FilmeAPI.swift */; };
+		1C21A91A260F6B8200CB3EB9 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21A919260F6B8200CB3EB9 /* Filme.swift */; };
+		1C634E9F2612488A0044368B /* FilmeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C634E9E2612488A0044368B /* FilmeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +26,9 @@
 		1C21A904260E7AFE00CB3EB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C21A907260E7AFE00CB3EB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C21A909260E7AFE00CB3EB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C21A919260F6B8200CB3EB9 /* FilmeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeAPI.swift; sourceTree = "<group>"; };
+		1C21A919260F6B8200CB3EB9 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		1C21A91B260F7B4A00CB3EB9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1C634E9E2612488A0044368B /* FilmeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeCell.swift; sourceTree = "<group>"; };
 		4C2914BE7C26EAD64BFF3F47 /* Pods_FilmesLista.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmesLista.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD70C6F271BD12E70A02158B /* Pods-FilmesLista.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmesLista.debug.xcconfig"; path = "Target Support Files/Pods-FilmesLista/Pods-FilmesLista.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,8 +80,9 @@
 				1C21A904260E7AFE00CB3EB9 /* Assets.xcassets */,
 				1C21A906260E7AFE00CB3EB9 /* LaunchScreen.storyboard */,
 				1C21A909260E7AFE00CB3EB9 /* Info.plist */,
-				1C21A919260F6B8200CB3EB9 /* FilmeAPI.swift */,
+				1C21A919260F6B8200CB3EB9 /* Filme.swift */,
 				1C21A91B260F7B4A00CB3EB9 /* MyPlayground.playground */,
+				1C634E9E2612488A0044368B /* FilmeCell.swift */,
 			);
 			path = FilmesLista;
 			sourceTree = "<group>";
@@ -208,9 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C21A91A260F6B8200CB3EB9 /* FilmeAPI.swift in Sources */,
+				1C21A91A260F6B8200CB3EB9 /* Filme.swift in Sources */,
 				1C21A900260E7AFD00CB3EB9 /* ViewController.swift in Sources */,
 				1C21A8FE260E7AFC00CB3EB9 /* AppDelegate.swift in Sources */,
+				1C634E9F2612488A0044368B /* FilmeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
