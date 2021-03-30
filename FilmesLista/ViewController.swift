@@ -14,11 +14,12 @@ import AlamofireImage
 
 
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate{
     
     // MARK: - Outlets
     @IBOutlet weak var colecaoDeFilmes: UICollectionView!
-  
+    @IBOutlet weak var pesquisarFilmes: UISearchBar!
+    
     
     
     // MARK: URL da requisição
@@ -31,6 +32,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         colecaoDeFilmes.dataSource = self
         colecaoDeFilmes.delegate = self
+        pesquisarFilmes.delegate = self
         makeRequest()
 
     }
@@ -72,7 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let celulaPacote = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as? PacoteFilmesCollectionViewCell
-        celulaPacote?.backgroundColor = UIColor.gray
+        
         celulaPacote?.layer.cornerRadius = 7
         celulaPacote?.layer.borderWidth = 0.5
         celulaPacote?.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
@@ -85,10 +87,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return celulaPacote!
     }
 
-    func collectionView(_ collectionView: UICollectionView, layot collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let larguraCelula = collectionView.bounds.width / 2
         return CGSize(width: larguraCelula-15, height: 160)
     }
+    
+    //MARK: - SearcBar
+   // func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+     //  let filtroListaFilmes = NSPredicate(format: "title contains %@", searchText)
+     //   let listaFiltrada:Array<Result> = filtered(using: filtroListaFilmes) as! Array
+      //  colecaoDeFilmes.reloadData()
+   // }
     
     }
 
