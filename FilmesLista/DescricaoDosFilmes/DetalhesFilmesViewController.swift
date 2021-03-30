@@ -16,13 +16,16 @@ class DetalhesFilmesViewController: UIViewController {
     @IBOutlet weak var labelSinopseFilme: UITextView!
     
     var filmeSelecionado:Result? = nil
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+         
+        
         if let filme = filmeSelecionado{
             
-            self.imagemDetalheFilme.image = UIImage(named: filme.posterPath)
+            let urlDaImagem = filme.posterPath
+            let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
+            self.imagemDetalheFilme.af_setImage(withURL: imagem!)
             
             if (filme.title) == nil{
                 self.labelTituloFilme.text = filme.name

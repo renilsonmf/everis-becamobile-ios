@@ -81,16 +81,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         celulaPacote?.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
         
         
-        //MARK: - Listando filmes e séries
+        //MARK: - Listando filmes na row
          let urlDaImagem = results [indexPath.row].posterPath
-        
-        if urlDaImagem == nil{
             let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
             celulaPacote?.imgView.af_setImage(withURL: imagem!)
-        }else{
-            let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
-            celulaPacote?.imgView.af_setImage(withURL: imagem!)
-        }
         return celulaPacote!
     }
 
