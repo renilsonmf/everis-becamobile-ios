@@ -14,19 +14,24 @@ import AlamofireImage
 
 
 
-class ViewController: UIViewController, UITableViewDataSource{
+class ViewController: UIViewController, UICollectionViewDataSource{
     
+    // MARK: - Outlets
+    @IBOutlet weak var colecaoDeFilmes: UICollectionView!
+    
+    // MARK: URL da requisição
     final let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
     
    private var results = [Result]()
-   @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colecaoDeFilmes.dataSource = self
         makeRequest()
-        
 
     }
+    
+    // MARK: Requisição
     
     func makeRequest(){
         guard let setandoURL = url else {return}
@@ -41,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource{
                 let selecionaResultado = try decoder.decode(Filme.self, from: data)
                 self.results = selecionaResultado.results
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.colecaoDeFilmes.reloadData()
                 }
             }catch{
                 print("Erro!! após puxar os dados da api")
@@ -52,24 +57,32 @@ class ViewController: UIViewController, UITableViewDataSource{
         
  }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    // MARK: - Numero de itens na collection
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilmeCell") as? FilmeCell else {return UITableViewCell()}
+    // MARK:  Conteudo do item
     
-        // Verificação pra mostrar na table view filmes e séries
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let celulaPacote = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as? PacoteFilmesCollectionViewCell
+        celulaPacote?.backgroundColor = UIColor.blue
+        celulaPacote?.layer.cornerRadius = 8
+        
         if results[indexPath.row].title == nil{
-            cell.tituloLabel.text = results[indexPath.row].name
+            celulaPacote?.tituloLabel.text = results[indexPath.row].name
         }else{
-            cell.tituloLabel.text = results[indexPath.row].title
+            celulaPacote?.tituloLabel.text = results[indexPath.row].title
         }
-        
-        return cell
-        
+        return celulaPacote!
     }
-}
+    
+    }
+
+
+
     
 
     
