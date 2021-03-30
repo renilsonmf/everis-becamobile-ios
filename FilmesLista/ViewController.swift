@@ -25,6 +25,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: URL da requisição
     final let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
     
+    
    private var results = [Result]()
     
     override func viewDidLoad() {
@@ -60,7 +61,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             
     }.resume()
-        
+
  }
     
 
@@ -79,10 +80,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         celulaPacote?.layer.borderWidth = 0.5
         celulaPacote?.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
         
-        if results[indexPath.row].title == nil{
-            celulaPacote?.tituloLabel.text = results[indexPath.row].name
+        
+        
+       
+
+        //MARK: - Listando filmes e séries
+         let urlDaImagem = results [indexPath.row].posterPath
+        
+        if urlDaImagem == nil{
+            let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
+            celulaPacote?.imgView.af_setImage(withURL: imagem!)
         }else{
-            celulaPacote?.tituloLabel.text = results[indexPath.row].title
+            let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
+            celulaPacote?.imgView.af_setImage(withURL: imagem!)
         }
         return celulaPacote!
     }

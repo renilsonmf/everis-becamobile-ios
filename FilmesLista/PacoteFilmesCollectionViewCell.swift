@@ -9,7 +9,6 @@
 import UIKit
 
 class PacoteFilmesCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     
 }
