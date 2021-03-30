@@ -14,7 +14,7 @@ import AlamofireImage
 
 
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,UISearchBarDelegate{
     
     // MARK: - Outlets
     @IBOutlet weak var colecaoDeFilmes: UICollectionView!
@@ -81,9 +81,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         celulaPacote?.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
         
         
-        
-       
-
         //MARK: - Listando filmes e séries
          let urlDaImagem = results [indexPath.row].posterPath
         
@@ -100,6 +97,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let larguraCelula = collectionView.bounds.width / 2
         return CGSize(width: larguraCelula-15, height: 160)
+    }
+    
+    //MARK: - Retorna o clique do usuario 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filme = results[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "detalhes") as! DetalhesFilmesViewController
+        controller.filmeSelecionado = filme
+        self.present(controller, animated: true, completion: nil )
     }
     
     //MARK: - SearcBar
