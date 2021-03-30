@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     // MARK: URL da requisição
-    final let url = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
+    final let url = URL(string: "https://api.themoviedb.org/3/trending/movies/day?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
     
     
    private var results = [Result]()

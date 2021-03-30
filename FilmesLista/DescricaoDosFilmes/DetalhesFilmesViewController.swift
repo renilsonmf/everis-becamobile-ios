@@ -21,8 +21,14 @@ class DetalhesFilmesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let filme = filmeSelecionado{
+            
             self.imagemDetalheFilme.image = UIImage(named: filme.posterPath)
-            self.labelTituloFilme.text = filme.title
+            
+            if (filme.title) == nil{
+                self.labelTituloFilme.text = filme.name
+            }else{
+                self.labelTituloFilme.text = filme.title
+            }
             self.labelRatingFilme.text = String (filme.voteAverage)
             self.labelSinopseFilme.text = filme.overview
         }
