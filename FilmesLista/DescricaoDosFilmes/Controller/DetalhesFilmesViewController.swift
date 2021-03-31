@@ -15,15 +15,11 @@ class DetalhesFilmesViewController: UIViewController {
     @IBOutlet weak var imagemDetalheFilme: UIImageView!
     @IBOutlet weak var labelTituloFilme: UILabel!
     @IBOutlet weak var labelRatingFilme: UILabel!
-    @IBOutlet weak var labelSinopseFilme: UILabel!
-    
+    @IBOutlet weak var labelSinopseFilme: UITextView!
     
     var filmeSelecionado:Result? = nil
-
     override func viewDidLoad() {
-        super.viewDidLoad()
-         
-        
+        super.viewDidLoad()        
         if let filme = filmeSelecionado{
             
             let urlDaImagem = filme.posterPath

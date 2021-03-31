@@ -27,27 +27,11 @@
                                             <constraint firstAttribute="height" constant="30" id="qbi-zy-dRF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="l8y-8s-4y7">
-                                        <rect key="frame" x="0.0" y="33" width="290" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="llE-92-nbV"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 filmes encontrados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7v-Sd-MWb">
-                                        <rect key="frame" x="0.0" y="71" width="290" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Y6w-zS-RUt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialHebrew-Light" family="Arial Hebrew" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R3s-eT-Q3Y">
-                                        <rect key="frame" x="0.0" y="104" width="290" height="444"/>
+                                        <rect key="frame" x="0.0" y="33" width="290" height="515"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sCB-qi-t23">
                                             <size key="itemSize" width="140" height="177"/>
@@ -89,7 +73,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="uZq-aA-zyv" firstAttribute="trailing" secondItem="ggF-59-PNa" secondAttribute="trailing" constant="-15" id="9Qp-Rd-T1m"/>
                             <constraint firstItem="uZq-aA-zyv" firstAttribute="bottom" secondItem="ggF-59-PNa" secondAttribute="bottom" id="TE3-5P-Y8F"/>
@@ -100,7 +84,6 @@
                     </view>
                     <connections>
                         <outlet property="colecaoDeFilmes" destination="R3s-eT-Q3Y" id="Y6j-oP-Lml"/>
-                        <outlet property="pesquisarFilmes" destination="l8y-8s-4y7" id="Eqp-RV-SEc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcM-vR-0hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,7 +101,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0O-Ae-WF9">
                                 <rect key="frame" x="16" y="32" width="47" height="31"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="17"/>
-                                <state key="normal" title="Voltar"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="botaoVoltar:" destination="gPE-nn-AgZ" eventType="touchUpInside" id="eGg-OG-MrC"/>
                                 </connections>
@@ -128,8 +113,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5lg-hG-bDd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialHebrew-Light" family="Arial Hebrew" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew-Light" family="Arial Hebrew" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N3T-s5-Yul">
@@ -142,37 +127,37 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l1-1u-Uvg">
                                 <rect key="frame" x="16" y="359" width="288" height="20"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sinopse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2f-Ew-zPW" propertyAccessControl="none">
-                                <rect key="frame" x="21" y="410" width="279" height="92"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="UOJ-xY-w2W"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialHebrew-Light" family="Arial Hebrew" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfb-tp-e5O">
+                                <rect key="frame" x="16" y="420" width="288" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew-Light" family="Arial Hebrew" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="1l1-1u-Uvg" firstAttribute="top" secondItem="N3T-s5-Yul" secondAttribute="bottom" constant="8" id="1yW-8i-qZo"/>
                             <constraint firstItem="1l1-1u-Uvg" firstAttribute="top" secondItem="N3T-s5-Yul" secondAttribute="bottom" constant="8" id="2eX-bb-oIa"/>
+                            <constraint firstAttribute="bottom" secondItem="Vfb-tp-e5O" secondAttribute="bottom" constant="20" symbolic="YES" id="552-z1-tCe"/>
                             <constraint firstItem="QYS-Pi-2UE" firstAttribute="trailing" secondItem="N3T-s5-Yul" secondAttribute="trailing" constant="66" id="6CX-V2-ScH"/>
+                            <constraint firstItem="QYS-Pi-2UE" firstAttribute="trailing" secondItem="Vfb-tp-e5O" secondAttribute="trailing" constant="16" id="7Eu-Li-FNd"/>
                             <constraint firstItem="H0O-Ae-WF9" firstAttribute="top" secondItem="QYS-Pi-2UE" secondAttribute="top" constant="12" id="7LN-zG-GVz"/>
                             <constraint firstItem="N3T-s5-Yul" firstAttribute="top" secondItem="QYS-Pi-2UE" secondAttribute="top" constant="70" id="Abl-Wa-eo0"/>
+                            <constraint firstItem="Vfb-tp-e5O" firstAttribute="leading" secondItem="QYS-Pi-2UE" secondAttribute="leading" constant="16" id="Gae-p2-5aq"/>
                             <constraint firstItem="Pww-LZ-vnH" firstAttribute="centerX" secondItem="N3T-s5-Yul" secondAttribute="centerX" id="IZz-Rj-8XP"/>
                             <constraint firstItem="1l1-1u-Uvg" firstAttribute="leading" secondItem="QYS-Pi-2UE" secondAttribute="leading" constant="16" id="LeV-I8-ZWZ"/>
                             <constraint firstItem="H0O-Ae-WF9" firstAttribute="leading" secondItem="QYS-Pi-2UE" secondAttribute="leading" constant="16" id="Lxa-gf-vmv"/>
                             <constraint firstItem="Pww-LZ-vnH" firstAttribute="trailing" secondItem="1l1-1u-Uvg" secondAttribute="trailing" id="a8L-Yj-Hy2"/>
-                            <constraint firstItem="Pww-LZ-vnH" firstAttribute="leading" secondItem="B2f-Ew-zPW" secondAttribute="leading" id="kCq-Ln-W0M"/>
-                            <constraint firstItem="Pww-LZ-vnH" firstAttribute="trailing" secondItem="B2f-Ew-zPW" secondAttribute="trailing" id="mDC-l0-uOP"/>
                             <constraint firstItem="QYS-Pi-2UE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H0O-Ae-WF9" secondAttribute="trailing" symbolic="YES" id="oZ2-Fg-XxG"/>
                             <constraint firstItem="Pww-LZ-vnH" firstAttribute="top" secondItem="1l1-1u-Uvg" secondAttribute="bottom" constant="14" id="pBw-6o-Mdm"/>
                             <constraint firstItem="N3T-s5-Yul" firstAttribute="leading" secondItem="QYS-Pi-2UE" secondAttribute="leading" constant="66" id="qp6-Es-986"/>
-                            <constraint firstItem="B2f-Ew-zPW" firstAttribute="top" secondItem="1l1-1u-Uvg" secondAttribute="bottom" constant="33" id="tSO-XJ-Kmw"/>
                             <constraint firstItem="Pww-LZ-vnH" firstAttribute="leading" secondItem="QYS-Pi-2UE" secondAttribute="leading" constant="16" id="xGn-de-1cu"/>
+                            <constraint firstItem="Vfb-tp-e5O" firstAttribute="top" secondItem="Pww-LZ-vnH" secondAttribute="bottom" constant="6" id="zZZ-Mc-RGE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QYS-Pi-2UE"/>
                     </view>
@@ -181,7 +166,7 @@
                     <connections>
                         <outlet property="imagemDetalheFilme" destination="N3T-s5-Yul" id="IOT-9P-zm5"/>
                         <outlet property="labelRatingFilme" destination="Pww-LZ-vnH" id="jPR-Vk-RcI"/>
-                        <outlet property="labelSinopseFilme" destination="B2f-Ew-zPW" id="Q9J-Dk-dk2"/>
+                        <outlet property="labelSinopseFilme" destination="Vfb-tp-e5O" id="ShI-B6-rhS"/>
                         <outlet property="labelTituloFilme" destination="1l1-1u-Uvg" id="8tD-BD-Gs2"/>
                     </connections>
                 </viewController>

@@ -14,11 +14,10 @@ import AlamofireImage
 
 
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,UISearchBarDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
     
     // MARK: - Outlets
     @IBOutlet weak var colecaoDeFilmes: UICollectionView!
-    @IBOutlet weak var pesquisarFilmes: UISearchBar!
     
     
     
@@ -28,14 +27,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private var results = [Result]()
     
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         colecaoDeFilmes.dataSource = self
         colecaoDeFilmes.delegate = self
-        pesquisarFilmes.delegate = self
         makeRequest()
-
     }
     
     // MARK: Requisição
@@ -82,6 +79,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         
         //MARK: - Listando filmes na row
+        
          let urlDaImagem = results [indexPath.row].posterPath
             let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
             celulaPacote?.imgView.af_setImage(withURL: imagem!)
@@ -103,14 +101,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         controller.filmeSelecionado = filme
         self.present(controller, animated: true, completion: nil )
     }
-    
-    //MARK: - SearcBar
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        let filtroListaFilme = NSPredicate(format: "posterPath contains %@", searchText)
-//        let listaFiltrada:Array<Result> = (results as NSArray).filtered(using: filtroListaFilme) as! Array
-//         results = listaFiltrada
-//        colecaoDeFilmes.reloadData()
-//    }
     
     }
 
