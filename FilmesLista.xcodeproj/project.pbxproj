@@ -82,9 +82,17 @@
 		1C0484EF26139DC70018526E /* DescricaoDosFilmes */ = {
 			isa = PBXGroup;
 			children = (
-				1C0484F02613A04C0018526E /* DetalhesFilmesViewController.swift */,
+				1C116DE72613F0AC0027B8B7 /* Controller */,
 			);
 			path = DescricaoDosFilmes;
+			sourceTree = "<group>";
+		};
+		1C116DE72613F0AC0027B8B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C0484F02613A04C0018526E /* DetalhesFilmesViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1C21A8F1260E7AFC00CB3EB9 = {

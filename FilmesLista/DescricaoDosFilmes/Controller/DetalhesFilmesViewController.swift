@@ -14,7 +14,6 @@ class DetalhesFilmesViewController: UIViewController {
     @IBOutlet weak var labelTituloFilme: UILabel!
     @IBOutlet weak var labelRatingFilme: UILabel!
     @IBOutlet weak var labelSinopseFilme: UITextView!
-    
     var filmeSelecionado:Result? = nil
 
     override func viewDidLoad() {
@@ -32,7 +31,7 @@ class DetalhesFilmesViewController: UIViewController {
             }else{
                 self.labelTituloFilme.text = filme.title
             }
-            self.labelRatingFilme.text = String (filme.voteAverage)
+            self.labelRatingFilme.text = String ("Avaliação: \(filme.voteAverage)")
             self.labelSinopseFilme.text = filme.overview
         }
     }

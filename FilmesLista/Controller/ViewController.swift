@@ -27,6 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
    private var results = [Result]()
+   
     
     override func viewDidLoad() {
         
@@ -85,12 +86,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
          let urlDaImagem = results [indexPath.row].posterPath
             let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
             celulaPacote?.imgView.af_setImage(withURL: imagem!)
+            
         return celulaPacote!
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let larguraCelula = collectionView.bounds.width / 2
-        return CGSize(width: larguraCelula-15, height: 160)
+        return CGSize(width: larguraCelula-10, height: 180)
     }
     
     //MARK: - Retorna o clique do usuario 
@@ -104,11 +106,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     //MARK: - SearcBar
-   // func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-     //  let filtroListaFilmes = NSPredicate(format: "title contains %@", searchText)
-     //   let listaFiltrada:Array<Result> = filtered(using: filtroListaFilmes) as! Array
-      //  colecaoDeFilmes.reloadData()
-   // }
+    //func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    //    let filtroListaFilmes = NSPredicate(format: "title contains %@", searchText)
+    //   let listaFiltrada = results.filtered(using: filtroListaFilmes) as! Array
+    //
+    //   results = listaFiltrada
+    //   colecaoDeFilmes.reloadData()
+    //  }
     
     }
 
