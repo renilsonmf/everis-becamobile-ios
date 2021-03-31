@@ -10,10 +10,14 @@ import UIKit
 
 class DetalhesFilmesViewController: UIViewController {
 
+    //MARK: - Outlets
+    
     @IBOutlet weak var imagemDetalheFilme: UIImageView!
     @IBOutlet weak var labelTituloFilme: UILabel!
     @IBOutlet weak var labelRatingFilme: UILabel!
-    @IBOutlet weak var labelSinopseFilme: UITextView!
+    @IBOutlet weak var labelSinopseFilme: UILabel!
+    
+    
     var filmeSelecionado:Result? = nil
 
     override func viewDidLoad() {

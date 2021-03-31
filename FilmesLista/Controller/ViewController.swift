@@ -26,8 +26,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     final let url = URL(string: "https://api.themoviedb.org/3/trending/movies/day?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
     
     
-   private var results = [Result]()
-   
+    private var results = [Result]()
     
     override func viewDidLoad() {
         
@@ -106,13 +105,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     //MARK: - SearcBar
-    //func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //    let filtroListaFilmes = NSPredicate(format: "title contains %@", searchText)
-    //   let listaFiltrada = results.filtered(using: filtroListaFilmes) as! Array
-    //
-    //   results = listaFiltrada
-    //   colecaoDeFilmes.reloadData()
-    //  }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        let filtroListaFilme = NSPredicate(format: "posterPath contains %@", searchText)
+//        let listaFiltrada:Array<Result> = (results as NSArray).filtered(using: filtroListaFilme) as! Array
+//         results = listaFiltrada
+//        colecaoDeFilmes.reloadData()
+//    }
     
     }
 
