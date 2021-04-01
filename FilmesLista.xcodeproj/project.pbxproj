@@ -40,7 +40,6 @@
 		1C21A907260E7AFE00CB3EB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C21A909260E7AFE00CB3EB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C21A919260F6B8200CB3EB9 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
-		1C21A91B260F7B4A00CB3EB9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1C634EA02612B4FE0044368B /* PacoteFilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteFilmesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C79F7532614E432008D99CC /* FilmesListaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilmesListaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C79F7552614E432008D99CC /* FilmesListaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesListaTests.swift; sourceTree = "<group>"; };
@@ -148,7 +147,6 @@
 				1C21A904260E7AFE00CB3EB9 /* Assets.xcassets */,
 				1C21A906260E7AFE00CB3EB9 /* LaunchScreen.storyboard */,
 				1C21A909260E7AFE00CB3EB9 /* Info.plist */,
-				1C21A91B260F7B4A00CB3EB9 /* MyPlayground.playground */,
 			);
 			path = FilmesLista;
 			sourceTree = "<group>";

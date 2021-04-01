@@ -12,63 +12,52 @@ import Alamofire
 import AlamofireImage
 
 
-
-
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
     
     // MARK: - Outlets
-    @IBOutlet weak var colecaoDeFilmes: UICollectionView!
-    
-    
-    
-    // MARK: URL da requisição
-    final let url = URL(string: "https://api.themoviedb.org/3/trending/movies/day?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
-    
+    @IBOutlet weak var colecaoDeFilmes: UICollectionView?
     
     private var results = [Result]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        colecaoDeFilmes.dataSource = self
-        colecaoDeFilmes.delegate = self
+        colecaoDeFilmes?.dataSource = self
+        colecaoDeFilmes?.delegate = self
         makeRequest()
     }
     
     // MARK: Requisição
     
     func makeRequest(){
+    
+         let url = URL(string: "https://api.themoviedb.org/3/trending/movies/day?api_key=8b26d70a68f1379627029b51b9dc87c5&language=pt-BR")
         guard let setandoURL = url else {return}
         URLSession.shared.dataTask(with: setandoURL) { data, URLResponse, error in
             guard let data = data, error == nil, URLResponse != nil else {
                 print("Erro!!")
                 return
             }
-         
+            
             do{
                 let decoder = JSONDecoder()
                 let selecionaResultado = try decoder.decode(Filme.self, from: data)
                 self.results = selecionaResultado.results
                 DispatchQueue.main.async {
-                    self.colecaoDeFilmes.reloadData()
+                    self.colecaoDeFilmes?.reloadData()
                 }
             }catch{
                 print("Erro!! após puxar os dados da api")
             }
             
-            
     }.resume()
 
  }
     
-
     // MARK: - Numero de itens na collection
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results.count
-    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return results.count}
     
-    // MARK:  Conteudo do item
+    // MARK:  Conteudo da linha
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let celulaPacote = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as? PacoteFilmesCollectionViewCell
@@ -77,15 +66,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         celulaPacote?.layer.borderWidth = 0.5
         celulaPacote?.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
         
-        
-        //MARK: - Listando filmes na row
+        //MARK: - Listando as imagens dos filmes na row
         
          let urlDaImagem = results [indexPath.row].posterPath
-            let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
-            celulaPacote?.imgView.af_setImage(withURL: imagem!)
-            
+         let imagem = URL(string: "https://image.tmdb.org/t/p/original/\(urlDaImagem)")
+        celulaPacote?.imgView?.af_setImage(withURL: imagem!)
         return celulaPacote!
     }
+    
+    //MARK: - Stylo da collectionView
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let larguraCelula = collectionView.bounds.width / 2

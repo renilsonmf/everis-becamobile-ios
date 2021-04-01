@@ -9,5 +9,6 @@
 import UIKit
 
 class PacoteFilmesCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var imgView: UIImageView?
 }
+
